@@ -1,0 +1,26 @@
+#grid{
+  padding-bottom: 15px;
+}
+
+td{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+}
+td.isAlive{
+  background-color: green;
+
+}
+td.isDead{
+  background-color: white;
+
+}
+table{
+  background-color: white;
+  border: 2px solid black;
+
+}
+body{
+  background-color: red;
+  position: absolute;
+}
