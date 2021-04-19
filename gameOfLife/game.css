@@ -1,6 +1,6 @@
 body{
-	background-color: #990000;
-	font-family: "Lucida Console";
+	background-color:black;
+	 font-family:'Roboto',sans-serif;
 }
 
 h1{
@@ -10,9 +10,26 @@ h1{
 	color: white;
 }
 
+.bg{
+	position: absolute;
+	margin-left: 25%;
+	width: 60%;
+	height:85%;
+	border-radius: 50%;
+	box-shadow:
+	inset 0 0 50px #fff,
+	inset 20px 0 80px #f0f,
+	inset -20px 0 80px #0ff,
+	inset 20px 0 300px #f0f,
+	inset -20px 0 300px #0ff,
+	0 0 50px #fff,
+	-10px 0 80px #f0f,
+	10px 0 80px #0ff;
+}
+
 .grid{
 	margin: auto;
-	background-color: white;
+	background-color: #f8f8ff;
 }
 
 .board {
@@ -21,19 +38,18 @@ h1{
 	border-collapse: collapse;
 	padding: 0px;
 	margin: auto;
-	background-color: white;
+	background-color: #e5e4e2;
 }
 .boardcell {
 	width: 10px;
 	height: 10px;;
 	font-size: 1px;
-	border: solid 1px #EEEEEE;
+	border: solid 1px gray;
 	padding: 0px;
 	margin: 0px;
 }
 
 .iterations{
-	margin: auto;
 	color: white;
 }
 
@@ -41,9 +57,33 @@ h1{
 	color: white;
 }
 
-.StatusNormal {
-	background-color: White;
-}
+
 .StatusWait {
 	background-color: Yellow;
+}
+
+
+input[type=button]{
+		width: 110px;
+	  padding: 0.5em 3em;
+	  margin: 0 0.3em 0.3em 0;
+		border:1px solid #FFFFFF;
+	  box-sizing: border-box;
+		text-align: center;
+		text-transform:uppercase;
+	  color:#FFFFFF;
+		background-color: Transparent;
+		font-weight:400;
+ 
+}
+.StatusNormal{
+	display: block;
+	width: 500px;
+	padding: 0.5em 3em;
+	margin: 0 0.3em 0.3em 0;
+  font-weight:400;
+	box-sizing: border-box;
+	text-transform:uppercase;
+	color:#FFFFFF;
+	background-color: Transparent;
 }

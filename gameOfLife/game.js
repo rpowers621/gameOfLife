@@ -1,22 +1,22 @@
 var rowCount = 50;
 var colCount = 50;
-        
+
 var grid = make2DArray(rowCount, colCount);
-        
+
 var cyclesPerRun = 23;
 var generation = 0;
 var cyclesToRun = 0;
-        
-function make2DArray(rowCount, colCount) { 
-    var result = new Array(rowCount); 
-    for (var r = 0; r < rowCount; r++) { 
-        result[r] = new Array(colCount); 
-        for (var c = 0; c < colCount; c++) { 
-            result[r][c] = 0; 
-        } 
-    } 
-    return(result); 
-} 
+
+function make2DArray(rowCount, colCount) {
+    var result = new Array(rowCount);
+    for (var r = 0; r < rowCount; r++) {
+        result[r] = new Array(colCount);
+        for (var c = 0; c < colCount; c++) {
+            result[r][c] = 0;
+        }
+    }
+    return(result);
+}
 
 function logGrid(){
     LogLine("");
@@ -31,7 +31,7 @@ function logGrid(){
         LogLine("");
     }
 }
-        
+
 function Log(Message){
     LogDiv.innerHTML += Message;
 }
@@ -78,7 +78,7 @@ function countNeighbors(row, col){
     result += isAliveAt(row + 1, col - 1, grid);
     result += isAliveAt(row + 1, col, grid);
     result += isAliveAt(row + 1, col + 1, grid);
-    return result; 
+    return result;
 }
 
 function isAliveAt(row, col){
@@ -97,7 +97,7 @@ function isAliveAt(row, col){
 function setup(rows, cols){
     rowCount = rows;
     colCount = cols;
-	
+
     grid = make2DArray(rowCount, colCount);
 
 	// Delete the old table content
@@ -105,26 +105,26 @@ function setup(rows, cols){
 	if (board == null){
 	    alert("Grid not found");
 	}
-	
-	while(board.firstChild) { 
-		board.removeChild(board.firstChild); 
+
+	while(board.firstChild) {
+		board.removeChild(board.firstChild);
 	}
-	
+
 	var body = document.createElement('tbody');
 
 	// Create new row
 	for (r = 0; r < rowCount; r++){
 		var newRow = document.createElement('tr');
-		newRow.id = "Row" + r;		
+		newRow.id = "Row" + r;
 		// Create new cell
 		for (c = 0; c < colCount; c++){
 			var newCell = document.createElement('td');
 			var ID = "R" + r + "C" + c;
 			newCell.id = ID;
-            //newCell.onclick = new Function("clicked('" + ID + "'," + r + "," + c + ");"); 
+           newCell.onclick = new Function("clicked('" + ID + "'," + r + "," + c + ");");
         	newCell.className = 'boardcell';
 			newRow.appendChild(newCell);
-		}	
+		}
 		body.appendChild(newRow);
 	}
 	board.appendChild(body);
@@ -136,13 +136,25 @@ function clicked(ID, row, col){
         cell.style.backgroundColor = "";
         grid[row][col] = 0;
 	}else{
-        cell.style.backgroundColor = "#006400";
-        grid[row][col] = 1;
+    var rand = Math.floor(Math.random()*3);
+    if(rand ==0 ){
+      cell.style.backgroundColor = "#800080";
+      grid[row][col] = 1;
     }
+    if (rand == 1) {
+      cell.style.backgroundColor = "#dda0dd";
+      grid[row][col] = 1;
+    }
+    if (rand == 2) {
+      cell.style.backgroundColor = "#9370db";
+      grid[row][col] = 1;
+    }
+
+  }
     generation = 0;
     setStatus("");
 }
-    
+
 function Test(XID){
     alert('Test XID=' + XID);
 }
@@ -154,7 +166,7 @@ function commandClear(){
     generation = 0;
     setStatus("");
 }
-           
+
 /*function clear(){
 	grid = make2DArray(rowCount, colCount);
     refresh();
@@ -166,21 +178,31 @@ function next(){
     nextGeneration();
     refresh();
 }
-        
+
 function refresh(){
 	for (r = 0; r < rowCount; r++){
 		for (c = 0; c < colCount; c++){
 			var ID = "R" + r + "C" + c;
             var cell = document.getElementById(ID);
             if (grid[r][c] == 1){
-                cell.style.backgroundColor = "#006400";
+              var rand = Math.floor(Math.random()*3);
+              if(rand ==0 ){
+                cell.style.backgroundColor = "#800080";
+              }
+              if (rand == 1) {
+                cell.style.backgroundColor = "#dda0dd";
+              }
+              if (rand == 2) {
+                cell.style.backgroundColor = "#9370db";
+              }
             }else{
                 cell.style.backgroundColor = "";
+
             }
         }
     }
 }
-        
+
 function run(){
     nextGeneration();
     cyclesToRun--;
@@ -190,7 +212,7 @@ function run(){
 		},100);
     }
 }
-        
+
 function start(){
     var iterCount = document.getElementById("IterCount");
     var count = iterCount.value;
@@ -206,11 +228,11 @@ function start(){
 		},100);
     }
 }
-        
+
 function stop(){
     cyclesToRun = 0;
 }
-        
+
 function load(){
     setup(50, 50);
     glider();
