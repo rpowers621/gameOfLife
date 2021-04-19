@@ -146,9 +146,9 @@ function clicked(ID, row, col){
 function Test(XID){
     alert('Test XID=' + XID);
 }
-   
-function clear(){
-	grid = make2DArray(rowCount, colCount);
+
+function commandClear(){
+    grid = make2DArray(rowCount, colCount);
     refresh();
     generation = 0;
     setStatus("");
