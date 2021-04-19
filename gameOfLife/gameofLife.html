@@ -13,33 +13,43 @@
     </script>
 </head>
 <body onload="load()">
-<h1 class="embcontent">Game of Life</h1>
+
+<h1>Game of Life</h1>
+<br>
+<br>
 	<div class = "grid" style= "height: 500px; width: 500px;">
-        <table id="grid" class="board">
+		<table id="grid" class="board">
 			<tr>
-                <td id="TestCell" class="boardcell" onclick="Test()">
-                    &nbsp;
-		</td>
-            </tr>
-	</table>
-    </div>
-	
-    <div class = "iterations">
-        <span>Generations per run: &nbsp;</span>
+				<td id="TestCell" class="boardcell" onclick="Test()">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class = "iterations">
+		<span>Generations per run: &nbsp;</span>
 		<input id="IterCount" size="7" type="text" value="23">
 	</div>
-	
+	<br>
 	<div class = "buttons">
-        <input id="clear" onclick="commandClear()" type="button" value="Clear">
-        <input id="next" onclick="next()" type="button" value="Step">
-        <input id="start" onclick="start()" type="button" value="Run">
-        <input id="stop" onclick="stop()" type="button" value="Stop">
-    </div>
-	
-	<div class = "patterns">
-		<input id = "glider" onclick="glider()" type = "button" value = "Glider">
+		<input id="next" onclick="next()" type="button" value="Step"/>
+		<input id="start" onclick="start()" type="button" value="Run"/>
+		<input id="stop" onclick="stop()" type="button" value="Stop"/>
+		<input id="clear" onclick="commandClear()" type = "button" value = "Clear"/>
 	</div>
-	
+	<br>
+	<div class = "patterns">
+		<p>Patterns</p>
+		<input id = "glider" onclick="glider()" type = "button" value = "Glider">
+		<input id = "loaf" onclick="loaf()" type = "button" value = "Loaf">
+		<input id = "blinker" onclick="patternBlinker()" type = "button" value = "Blinker">
+	</div>
+
     <div id="DivStatus" class="StatusNormal"></div>
     <div id="LogDiv" style="visibility: hidden">Log:</div>
 </body>
