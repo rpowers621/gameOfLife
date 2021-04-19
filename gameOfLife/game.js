@@ -121,7 +121,7 @@ function setup(rows, cols){
 			var newCell = document.createElement('td');
 			var ID = "R" + r + "C" + c;
 			newCell.id = ID;
-            newCell.onclick = new Function("clicked('" + ID + "'," + r + "," + c + ");"); 
+            //newCell.onclick = new Function("clicked('" + ID + "'," + r + "," + c + ");"); 
         	newCell.className = 'boardcell';
 			newRow.appendChild(newCell);
 		}	
@@ -136,7 +136,7 @@ function clicked(ID, row, col){
         cell.style.backgroundColor = "";
         grid[row][col] = 0;
 	}else{
-        cell.style.backgroundColor = "#228B22";
+        cell.style.backgroundColor = "#006400";
         grid[row][col] = 1;
     }
     generation = 0;
@@ -147,12 +147,20 @@ function Test(XID){
     alert('Test XID=' + XID);
 }
 
+//function changed to commandClear() because clear is reserved
 function commandClear(){
     grid = make2DArray(rowCount, colCount);
     refresh();
     generation = 0;
     setStatus("");
 }
+           
+/*function clear(){
+	grid = make2DArray(rowCount, colCount);
+    refresh();
+    generation = 0;
+    setStatus("");
+}*/
 
 function next(){
     nextGeneration();
@@ -165,7 +173,7 @@ function refresh(){
 			var ID = "R" + r + "C" + c;
             var cell = document.getElementById(ID);
             if (grid[r][c] == 1){
-                cell.style.backgroundColor = "#228B22";
+                cell.style.backgroundColor = "#006400";
             }else{
                 cell.style.backgroundColor = "";
             }
@@ -177,7 +185,9 @@ function run(){
     nextGeneration();
     cyclesToRun--;
     if (cyclesToRun > 0){
-        setTimeout("run()",100);
+        setTimeout(function(){
+			run();
+		},100);
     }
 }
         
@@ -191,7 +201,9 @@ function start(){
     if (cyclesToRun > 23){
     }
     if (cyclesToRun > 0){
-        setTimeout("run()",100);
+        setTimeout(function(){
+			run();
+		},100);
     }
 }
         
@@ -216,6 +228,36 @@ function glider(){
     refresh();
     generation = 0;
     setStatus("");
+}
+
+function loaf(){
+	var RO = Math.round((rowCount-1)/2-2);
+	var CO = Math.round((rowCount-1)/2-2);
+	grid = make2DArray(rowCount, colCount);
+	grid[RO][CO+1] = 1;
+	grid[RO][CO] = 1;
+	grid[RO-1][CO-1] = 1;
+	grid[RO-2][CO-1] = 1;
+	grid[RO-3][CO] = 1;
+	grid[RO-2][CO+1] = 1;
+	grid[RO-1][CO+2] = 1;
+	refresh();
+	generation = 0;
+	setStatus("");
+}
+
+function patternBlinker(){
+	var RO = Math.round((rowCount-1)/2-2);
+	var CO = Math.round((rowCount-1)/2-2);
+	grid = make2DArray(rowCount, colCount);
+	grid[RO][CO+1] = 1;
+    	grid[RO+1][CO] = 1;
+    	grid[RO+1][CO+1] = 1;
+    	grid[RO+1][CO+2] = 1;
+    	grid[RO+2][CO+1] = 1;
+	refresh();
+	generation = 0;
+	setStatus("");
 }
 
 function setStatus(StatusText){
