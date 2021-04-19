@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<link rel="stylesheet" type="text/css" href="game.css">
+	<title>Game of Life</title>
+	<script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript">
+		function load(){
+			setup(50, 50);
+			glider();
+		}
+    </script>
+</head>
+<body onload="load()">
+<h1 class="embcontent">Game of Life</h1>
+	<div class = "grid" style= "height: 500px; width: 500px;">
+        <table id="grid" class="board">
+			<tr>
+                <td id="TestCell" class="boardcell" onclick="Test()" style="background-image: url('images/alife.jpg')">
+                    &nbsp;
+				</td>
+            </tr>
+		</table>
+    </div>
+	
+    <div class = "iterations">
+        <span>Generations per run: &nbsp;</span>
+		<input id="IterCount" size="7" type="text" value="23">
+	</div>
+	
+	<div class = "buttons">
+        <input id="clear" onclick="clear()" type="button" value="Clear">
+        <input id="next" onclick="next()" type="button" value="Step">
+        <input id="start" onclick="start()" type="button" value="Run">
+        <input id="stop" onclick="stop()" type="button" value="Stop">
+    </div>
+	
+	<div class = "patterns">
+		<input id = "glider" onclick="glider()" type = "button" value = "Glider">
+	</div>
+	
+    <div id="DivStatus" class="StatusNormal"></div>
+    <div id="LogDiv" style="visibility: hidden">Log:</div>
+</body>
+</html>

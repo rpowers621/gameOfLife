@@ -1,0 +1,31 @@
+body{
+	background-color: white;
+}
+
+.ContentTableParameter {
+	color: white;
+	text-align: left;
+	vertical-align: top;
+	padding: 0px 8px 8px 8px;
+	vertical-align: top;
+}
+.board {
+	border: none;
+	border-collapse: collapse;
+	padding: 0px;
+	margin: 0px;
+}
+.boardcell {
+	width: 8px;
+	height: 8px;
+	font-size: 1px;
+	border: solid 1px #EEEEEE;
+	padding: 0px;
+	margin: 0px;
+}
+.StatusNormal {
+	background-color: White;
+}
+.StatusWait {
+	background-color: Yellow;
+}
