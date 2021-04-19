@@ -17,11 +17,11 @@
 	<div class = "grid" style= "height: 500px; width: 500px;">
         <table id="grid" class="board">
 			<tr>
-                <td id="TestCell" class="boardcell" onclick="Test()" style="background-image: url('images/alife.jpg')">
+                <td id="TestCell" class="boardcell" onclick="Test()">
                     &nbsp;
-				</td>
+		</td>
             </tr>
-		</table>
+	</table>
     </div>
 	
     <div class = "iterations">
@@ -30,7 +30,7 @@
 	</div>
 	
 	<div class = "buttons">
-        <input id="clear" onclick="clear()" type="button" value="Clear">
+        <input id="clear" onclick="commandClear()" type="button" value="Clear">
         <input id="next" onclick="next()" type="button" value="Step">
         <input id="start" onclick="start()" type="button" value="Run">
         <input id="stop" onclick="stop()" type="button" value="Stop">
