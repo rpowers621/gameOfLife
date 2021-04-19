@@ -1,5 +1,6 @@
 #grid{
   padding-bottom: 15px;
+  margin-left: 10%;
 }
 
 td{
@@ -22,5 +23,16 @@ table{
 }
 body{
   background-color: red;
-  position: absolute;
+
+}
+.buttonOptions{
+
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+button{
+  padding: 5px;
+  margin: 2%;
+
 }
