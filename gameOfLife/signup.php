@@ -12,6 +12,8 @@
 
 
     <div class="bg">
+      <div id="signCon">
+
 
 
 
@@ -30,6 +32,7 @@
             <input type = "submit" name = "submit" value = "signup">
         </fieldset>
     </form>
+        </div>
 
 </body>
 </html>

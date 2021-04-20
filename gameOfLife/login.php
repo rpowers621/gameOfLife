@@ -12,7 +12,7 @@
     <div class="a">
       <a href="home.php" id="back"> <- Back to home page</a>
 		</div>
-    <div class="main">
+
 
 
     <div class="bg">
@@ -63,7 +63,7 @@
           }
       ?>
 
-        </div>
+
       </div>
     </div>
   </body>
