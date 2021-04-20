@@ -10,7 +10,7 @@
   <body>
 
     <div class="a">
-      <a href="home.php" id="back"> <- Back to home page</a>
+      <a href="gameHome.html" id="back"> <- Back to home page</a>
 		</div>
 
 
