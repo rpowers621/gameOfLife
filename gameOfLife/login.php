@@ -10,7 +10,7 @@
   <body>
 
     <div class="a">
-      <a href="home.php" id="back"> <- Back to home page</a>
+      <a href="gameHome.php" id="back"> <- Back to home page</a>
 		</div>
 
 
@@ -19,7 +19,7 @@
       <div id="logCon">
 
 
-          <form action = "gameofLife.php" method = "post">
+          <form action = "login.php" method = "post">
           <!--Form containing the the fields: username, password-->
               <fieldset class = column>
                   <legend>Login:</legend>
@@ -35,7 +35,7 @@
             <input name="submit" type="submit" value="login">
         </fieldset>
     </form>
-            </div>
+
 
       <?php
           session_start();
@@ -49,7 +49,6 @@
               }else{
                   $_SESSION['user'] = $username;
                   $_SESSION['logged'] = "yes";
-                   header("Location: https://codd.cs.gsu.edu/~jdebroux1/WP/PW/3/gameofLife.html");
                   echo <<< ENDPAGE
                   <!DOCTYPE html>
                   <html>
@@ -57,13 +56,19 @@
                     </head>
                   </html>
                   <body>
+                  <form action="gameofLife.php" method= "post">
+                    <input type="hidden" name="username" value= "$username"/>
+                      <input type="hidden" name="password" value= "$password"/>
+                      <br>
+                      <input type="submit"name = "submit" value = "Correct info, continue to game!">
+                  </form>
                   </body>
                   ENDPAGE;
               }
           }
       ?>
 
-
+            </div>
       </div>
     </div>
   </body>
