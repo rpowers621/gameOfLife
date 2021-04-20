@@ -94,6 +94,7 @@ function isAliveAt(row, col){
     return result;
 }
 
+//so it can run on codd
 function setup(rows, cols){
     rowCount = rows;
     colCount = cols;
@@ -121,8 +122,8 @@ function setup(rows, cols){
 			let newCell = document.createElement('td');
 			let ID = "R" + r + "C" + c;
 			newCell.id = ID;
-      newCell.addEventListener('click',function(){ clicked(ID,r,c);});
-      newCell.className = 'boardcell';
+			newCell.addEventListener('click',function(){ clicked(ID,r,c);});
+        	newCell.className = 'boardcell';
 			newRow.appendChild(newCell);
 		}
 		body.appendChild(newRow);
