@@ -4,15 +4,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="login.css?<?php echo time(); ?>" />
+    <link rel="stylesheet" type="text/css" href="game.css" />
  </head>
   </head>
   <body>
-    
-    
-    <div class="main">
 
-          <form action = "login.php" method = "post">
+
+    <div class="bg">
+      <div id="logCon">
+
+
+          <form action = "gameofLife.php" method = "post">
           <!--Form containing the the fields: username, password-->
               <fieldset class = column>
                   <legend>Login:</legend>
@@ -28,6 +30,7 @@
             <input name="submit" type="submit" value="login">
         </fieldset>
     </form>
+            </div>
 
       <?php
           session_start();
@@ -54,6 +57,7 @@
               }
           }
       ?>
+
         </div>
       </div>
     </div>

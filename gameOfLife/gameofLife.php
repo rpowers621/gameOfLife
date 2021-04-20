@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +15,13 @@
     </script>
 </head>
 <body onload="load()">
+
+<?php
+
+$Color = "white";
+$Text = $_POST['username'];
+  echo '<div style="Color:'.$Color.'">user: '.$Text.'</div>'
+?>
 
 <div class="bg">
 

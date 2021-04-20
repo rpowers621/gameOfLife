@@ -4,18 +4,18 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-     <link rel="stylesheet" type="text/css" href="login.css?<?php echo time(); ?>" />
+     <link rel="stylesheet" type="text/css" href="game.css" />
   </head>
   <body>
 
     <div id="circle" >
-    
-      
-    <div class="main">
+
+
+    <div class="bg">
 
 
 
-    <form action = "http://codd.cs.gsu.edu/~jdebroux1/WP/PW/3/signup-submit.php" method = "post" >
+    <form action = "signup-submit.php" method = "post" >
         <!--Form containing the fields: username and password -->
         <fieldset class = "column">
             <legend>New User:</legend>
@@ -57,7 +57,7 @@
               </head>
             </html>
             <body>
-         
+
             </body>
             ENDPAGE;
         }else{

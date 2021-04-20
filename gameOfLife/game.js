@@ -101,7 +101,7 @@ function setup(rows, cols){
     grid = make2DArray(rowCount, colCount);
 
 	// Delete the old table content
-	var board = document.getElementById('grid');
+	let board = document.getElementById('grid');
 	if (board == null){
 	    alert("Grid not found");
 	}
@@ -110,19 +110,19 @@ function setup(rows, cols){
 		board.removeChild(board.firstChild);
 	}
 
-	var body = document.createElement('tbody');
+	let body = document.createElement('tbody');
 
 	// Create new row
-	for (r = 0; r < rowCount; r++){
-		var newRow = document.createElement('tr');
+	for (let r = 0; r < rowCount; r++){
+		let newRow = document.createElement('tr');
 		newRow.id = "Row" + r;
 		// Create new cell
-		for (c = 0; c < colCount; c++){
-			var newCell = document.createElement('td');
-			var ID = "R" + r + "C" + c;
+		for (let c = 0; c < colCount; c++){
+			let newCell = document.createElement('td');
+			let ID = "R" + r + "C" + c;
 			newCell.id = ID;
-           newCell.onclick = new Function("clicked('" + ID + "'," + r + "," + c + ");");
-        	newCell.className = 'boardcell';
+      newCell.addEventListener('click',function(){ clicked(ID,r,c);});
+      newCell.className = 'boardcell';
 			newRow.appendChild(newCell);
 		}
 		body.appendChild(newRow);
@@ -285,7 +285,7 @@ function patternBlinker(){
 
 function randomGrid(){
   grid = make2DArray(rowCount, colCount);
-  for (var i = 0; i < 850; i++) {
+  for (var i = 0; i < 1000; i++) {
     var RO = Math.floor(Math.random()*50);
     var CO = Math.floor(Math.random()*50);
     grid[RO][CO] = 1;
