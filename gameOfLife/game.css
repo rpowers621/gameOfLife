@@ -9,36 +9,7 @@ h1{
 	text-align: center;
 	color: white;
 }
-#head1{
-	font-size: 30px;
-}
-#username{
-	color:white;
-}
-#signCon{
 
-	text-align: center;
-	color: white;
-}
-#logCon{
-	margin-top: 30%;
- text-align: center;
- color: white;
-}
-
-#sign-gb{
-	width: 250px;
-	padding: 0.5em 3em;
-
-	margin-top: 25%;
-	border:1px solid #FFFFFF;
-	box-sizing: border-box;
-	text-align: center;
-	text-transform:uppercase;
-	color:#FFFFFF;
-	background-color: Transparent;
-	font-weight:500;
-}
 .bg{
 	position: absolute;
 	margin-left: 25%;
@@ -54,7 +25,6 @@ h1{
 	0 0 50px #fff,
 	-10px 0 80px #f0f,
 	10px 0 80px #0ff;
-
 }
 
 .grid{
@@ -106,35 +76,6 @@ input[type=button]{
 		font-weight:400;
  
 }
-.gb{
-	width: 250px;
-	padding: 0.5em 3em;
-	margin-left: 32%;
-	margin-top: 25%;
-	border:1px solid #FFFFFF;
-	box-sizing: border-box;
-	text-align: center;
-	text-transform:uppercase;
-	color:#FFFFFF;
-	background-color: Transparent;
-	font-weight:500;
-}
-a{
-	color:white;
-}
-a:hover{
-	color:white;
-}
-a:active{
-	color:white;
-}
-a:visited{
-	color:white;
-}
-a::before{
-	color:white;
-}
-
 .StatusNormal{
 	display: block;
 	width: 500px;
@@ -146,3 +87,30 @@ a::before{
 	color:#FFFFFF;
 	background-color: Transparent;
 }
+
+.main{
+	height: 500px;
+	width: 650px;
+	margin: auto;
+	background-color: white;
+	font-family:'Roboto',sans-serif;
+}
+
+#heading{
+	margin:auto;
+	margin-top: 80px;
+	text-align: center;
+	color: black;
+}
+
+#heading1{
+	margin: auto;
+	text-align: center;
+}
+
+#p1{
+	margin: auto;
+	margin-top: 10px;
+	text-align:center;
+}
+
