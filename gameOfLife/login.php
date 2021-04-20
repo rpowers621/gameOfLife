@@ -9,6 +9,11 @@
   </head>
   <body>
 
+    <div class="a">
+      <a href="home.php" id="back"> <- Back to home page</a>
+		</div>
+    <div class="main">
+
 
     <div class="bg">
       <div id="logCon">
@@ -44,7 +49,7 @@
               }else{
                   $_SESSION['user'] = $username;
                   $_SESSION['logged'] = "yes";
-
+                   header("Location: https://codd.cs.gsu.edu/~jdebroux1/WP/PW/3/gameofLife.html");
                   echo <<< ENDPAGE
                   <!DOCTYPE html>
                   <html>
