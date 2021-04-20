@@ -41,7 +41,7 @@
               }else{
                   $_SESSION['user'] = $username;
                   $_SESSION['logged'] = "yes";
-
+                   header("Location: https://codd.cs.gsu.edu/~jdebroux1/WP/PW/3/gameofLife.html");
                   echo <<< ENDPAGE
                   <!DOCTYPE html>
                   <html>
