@@ -282,6 +282,19 @@ function patternBlinker(){
 	setStatus("");
 }
 
+
+function randomGrid(){
+  grid = make2DArray(rowCount, colCount);
+  for (var i = 0; i < 850; i++) {
+    var RO = Math.floor(Math.random()*50);
+    var CO = Math.floor(Math.random()*50);
+    grid[RO][CO] = 1;
+  }
+	refresh();
+	generation = 0;
+	setStatus("");
+}
+
 function setStatus(StatusText){
     try{
         var StatusBox = document.getElementById('DivStatus');
